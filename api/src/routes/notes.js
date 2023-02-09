@@ -10,7 +10,6 @@ router.get('/', async (req, res) => {
   } catch (error) {
     res.send(404).json(error.message)
   }
-  
 });
 
 router.post('/create', async (req, res) => {
@@ -18,7 +17,7 @@ router.post('/create', async (req, res) => {
     const new_note = await Note.create(req.body);
     res.send({message: 'Success', new_note});
   } catch (error) {
-    res.send(404).json(error.message)
+    res.sendStatus(404).json(error)
   }
 });
 
