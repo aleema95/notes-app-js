@@ -1,12 +1,12 @@
 const { Router } = require('express');
-const { User } = require('../db.js');
+const { Note } = require('../db.js');
 
 const router = Router();
 
 router.get('/', async (req, res) => {
   try {
-    const users = await User.findAll();
-    res.status(200).json({message: 'Success', users});
+    const note = await Note.findAll();
+    res.status(200).json({message: 'Success', note});
   } catch (error) {
     res.send(404).json(error.message)
   }
@@ -15,8 +15,8 @@ router.get('/', async (req, res) => {
 
 router.post('/create', async (req, res) => {
   try {
-    const new_user = await User.create(req.body);
-    res.sendStatus(200).json({message: 'Success', new_user});
+    const new_note = await Note.create(req.body);
+    res.json({message: 'Success', new_note});
   } catch (error) {
     res.send(404).json(error.message)
   }
