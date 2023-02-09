@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
 router.post('/create', async (req, res) => {
   try {
     const new_note = await Note.create(req.body);
-    res.json({message: 'Success', new_note});
+    res.send({message: 'Success', new_note});
   } catch (error) {
     res.send(404).json(error.message)
   }
