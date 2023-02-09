@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
 
 router.post('/create', async (req, res) => {
   try {
-    const new_favourites = create_favourite()
+    const new_favourites = create_favourite(req.body)
     res.json({message: 'Success', new_favourites});
   } catch (error) {
     res.json(error.message)
