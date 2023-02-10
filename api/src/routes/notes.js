@@ -33,4 +33,21 @@ router.delete('/delete/:id', async (req, res) => {
   }
 });
 
+router.put('/update/:id', async (req, res) => {
+  const { id } = req.params;
+  const { title, body, rating } = req.body
+  try {
+    const new_note = await Note.update({
+      title,
+      body,
+      rating
+    },{
+      where: { id }
+    });
+    res.send({message: 'Note updated successfuly'});
+  } catch (error) {
+    res.sendStatus(404).json(error)
+  }
+});
+
 module.exports = router;
