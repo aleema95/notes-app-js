@@ -21,4 +21,16 @@ router.post('/create', async (req, res) => {
   }
 });
 
+router.delete('/delete/:id', async (req, res) => {
+  const { id } = req.params;
+  try {
+    const new_note = await Note.destroy({
+      where: { id }
+    });
+    res.send({message: 'Note deleted successfuly'});
+  } catch (error) {
+    res.sendStatus(404).json(error)
+  }
+});
+
 module.exports = router;
