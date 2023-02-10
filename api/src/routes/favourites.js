@@ -23,4 +23,16 @@ router.post('/create', async (req, res) => {
   }
 });
 
+router.delete('/delete/:id', async (req, res) => {
+  const { id } = req.params;
+  try {
+    await Favourite.destroy({
+      where: { id }
+    })
+    res.json({message: 'Favourite deleted successfuly'});
+  } catch (error) {
+    res.json(error.message)
+  }
+});
+
 module.exports = router;
