@@ -1,4 +1,5 @@
 const { Router } = require('express');
+const { update_note } = require('../utils/note_utils')
 const { Note } = require('../db.js');
 
 const router = Router();
@@ -15,6 +16,7 @@ router.get('/', async (req, res) => {
 router.post('/create', async (req, res) => {
   try {
     const new_note = await Note.create(req.body);
+
     res.send({message: 'Success', new_note});
   } catch (error) {
     res.sendStatus(404).json(error)
@@ -35,15 +37,10 @@ router.delete('/delete/:id', async (req, res) => {
 
 router.put('/update/:id', async (req, res) => {
   const { id } = req.params;
-  const { title, body, rating } = req.body
+
   try {
-    const new_note = await Note.update({
-      title,
-      body,
-      rating
-    },{
-      where: { id }
-    });
+    update_note( id ,req.body)
+
     res.send({message: 'Note updated successfuly'});
   } catch (error) {
     res.sendStatus(404).json(error)
