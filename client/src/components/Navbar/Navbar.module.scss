@@ -3,7 +3,6 @@
 .main_container {
   width: 100%;
   height: 60px;
-  // background-color: #FFFFFF;
   background-color: #FFFFFF;
   display: flex;
   justify-content: space-between;
@@ -15,13 +14,12 @@
     min-width: 600px;
   }
   .nav_item {
-    color: $first-color;
+    color: $third-color;
     text-align: center;
     width: 200px;
-    // height: 100%;
     line-height: 60px;
     &:hover {
-      background-color: $first-color;
+      background-color: $third-color;
       color: #FFFFFF;
     }
   }
