@@ -1,12 +1,21 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
 import './App.css'
+import { createBrowserRouter, Route, Routes } from "react-router-dom"
+import Landing from './components/Landing/landing'
+// const router = createBrowserRouter([
+//   {
+//     path: '/',
+//     element: <Landing />,
+//   },
+// ])
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <div className="App">
+      <Routes>
+        <Route exact path='/' element={<Landing />} />
+      </Routes>
     </div>
   )
 }
