@@ -1,8 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import Landing from './components/Landing/landing';
 import './index.scss'
-import './index.css'
-import { RouterProvider } from 'react-router-dom';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
 const router = createBrowserRouter([
   {
