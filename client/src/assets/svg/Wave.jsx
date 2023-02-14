@@ -1,6 +1,6 @@
 import * as React from "react"
 
-const SvgComponent = (props) => (
+const Wave = (props) => (
   <svg
     style={{
       transform: "rotate(0deg)",
@@ -28,4 +28,4 @@ const SvgComponent = (props) => (
   </svg>
 )
 
-export default SvgComponent
+export default Wave

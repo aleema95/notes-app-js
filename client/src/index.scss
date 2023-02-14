@@ -12,6 +12,8 @@ button {
   background-color: $second-color;
   color: $secondary-color;
   transition: transform 0.3s;
+  border: none;
+  border-radius: 5px;
   &:hover {
    transform: scale(1.1); 
   }
