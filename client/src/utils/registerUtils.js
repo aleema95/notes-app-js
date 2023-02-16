@@ -4,6 +4,10 @@ export function validation(input) {
   const onlyLetters = /[^A-Za-z]/g;
   const emailValidator = /[A-Za-z0-9.-]+@[a-zA-Z-]+\.(com|edu|net)$/g;
 
+  if(!input.username) {
+    errors.username = true;
+  }
+
   if(!input.name) {
     errors.name_only_Letters = true;
     errors.name = true;
@@ -19,7 +23,11 @@ export function validation(input) {
     errors.invalid_email = true;
   } else if(!emailValidator.test(input.email)) errors.invalid_email = true;
 
-  if(!input.message) errors.message = true;
+  if(!input.password) {
+    errors.password = true;
+  } else if(input.password !== input.confirm_password && input.confirm_password !== false) {
+    errors.confirm_password = true
+  }
 
   return errors
 }
