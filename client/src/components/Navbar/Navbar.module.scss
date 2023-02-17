@@ -1,0 +1,26 @@
+@import '../../variables.scss';
+
+.main_container {
+  width: 100%;
+  height: 60px;
+  background-color: #FFFFFF;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0px 0px 30px -10px;
+  .nav_center_items {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    min-width: 600px;
+  }
+  .nav_item {
+    color: $third-color;
+    text-align: center;
+    width: 200px;
+    line-height: 60px;
+    &:hover {
+      background-color: $third-color;
+      color: #FFFFFF;
+    }
+  }
+}

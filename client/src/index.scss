@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,300;0,400;0,600;1,100;1,600&family=Roboto:wght@100;300;700&display=swap');
+@import './variables.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Barlow Condensed', sans-serif;
+}
+
+button {
+  background-color: $second-color;
+  color: $secondary-color;
+  transition: transform 0.3s;
+  border: none;
+  border-radius: 5px;
+  &:hover {
+   transform: scale(1.1); 
+  }
+}
+
+section {
+  margin: 50px;
+}
