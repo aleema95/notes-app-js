@@ -7,6 +7,21 @@
   right: 350px;
   border-radius: 10px;
   background-color: $third-color;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+  h4, p {
+    text-align: center;
+  }
+  h4 {
+    color: $secondary-color;
+  }
+}
+
+.invalidField {
+  color: rgb(250, 169, 169);
 }
 
 .validField {

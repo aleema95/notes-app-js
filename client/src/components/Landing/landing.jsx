@@ -1,7 +1,7 @@
 import React from "react";
 import s from './landing.module.scss'
 import Nav from "../Nav/nav";
-import LandingSVG from './landingSVG'
+import LandingSVG from '../../assets/svg/landingSVG'
 
 const Landing = () => {
 
