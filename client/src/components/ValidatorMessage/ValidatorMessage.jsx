@@ -12,7 +12,6 @@ export default function ValidatorMessage() {
     if ((Object.keys(form_errors).length === 0)) {
       setVisibility(false)
     } else setVisibility(true)
-    console.log(visibility);
   }, [form_errors, visibility])
 
   return (
@@ -22,13 +21,14 @@ export default function ValidatorMessage() {
           <motion.div 
             key="validator"
             className={s.main_container}
-            initial={{x:-400}}
-            animate={{x:0}}
+            initial={{x:-400, rotate:180}}
+            animate={{x:0, rotate: 360}}
             exit={{
               x:-400,
-              transition: { duration: 0.7 }
+              rotate: 180,
+              transition: { duration: 1 }
             }}
-            transition={{duration: 0.7, delay: 0.3}}
+            transition={{duration: 1, delay: 0.3}}
             >
             <div>
               <h4>Username:</h4>
