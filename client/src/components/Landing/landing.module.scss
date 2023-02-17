@@ -1,3 +1,5 @@
+@import "../../variables";
+
 .container {
   width: 100vw;
   height: 100vh;
@@ -7,24 +9,73 @@
   .homeContainer {
     width: 70%;
     height: 84vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     .topSection {
-      width: 100%;
+      width: 70%;
       height: 45%;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
       .leftDiv {
         width: 50%;
-        border: solid red;
-        font-size: 65px;
+        font-size: 60px;
         font-weight: thin;
         line-height: 70.91px;
         background: -webkit-linear-gradient(#1c3a75, #90ace4);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
       }
+
+      .noteCardContainer {
+        width: 35%;
+        height: 90%;
+        box-shadow: -10px 15px 15px 1px rgba(0, 0, 0, 0.2);
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .noteHeader{
+          height: 15%;
+          width: 95%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          border-bottom: solid rgba(17, 0, 171, 0.331);
+          border-width: 1px;
+          margin-bottom: 10px;
+          p{
+            color: #0b2454;
+            font-size: 1.4rem;
+            margin: 0 20px 0 20px;
+          }
+        }
+
+        .noteText{
+          height: 70%;
+          width: 90%;
+          font-size: 1.2rem;
+          line-height: 18px;
+        }
+        .noteAuthor{
+          width: 95%;
+          height: 15%;
+          p{
+            color: #0b2454;
+            font-size: 1.35rem;
+            margin: 0 20px 0 20px;
+            text-align: right;
+          }
+        }
+      }
     }
     .middleSection {
       width: 100%;
-      height: 20%;
+      margin-top: 4%;
+      height: 15%;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -33,18 +84,76 @@
         width: 70%;
       }
     }
+
     .bottomSection {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
       width: 100%;
       height: 35%;
+      font-size: 20px;
+      div {
+        height: 30%;
+        width: 70%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      h2 {
+        width: 33%;
+        text-align: center;
+      }
+      .bottomSectionText {
+        font-size: 20px;
+      }
+      .bottomSectionButton {
+        div {
+          width: 33%;
+          height: 90%;
+          color: aliceblue;
+          border-radius: 5px;
+          background-image: $gradient;
+          background-size: 100% 600%;
+          transition: 0.7s;
+          transition: background-position 0.7s;
+          background-position: top;
+          &:hover{
+            cursor: pointer;
+            transition: 0.7s;
+            transition: background-position 0.7s;
+            color: #122d62;
+            background-image: $gradient;
+            background-position: bottom;
+          }
+        }
+      }
     }
   }
-  .footer {
-    width: 100vw;
-    height: 8vh;
+  footer {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #2e5dbd;
-    font-size: 1.5rem;
+    justify-content: space-between;
+    width: 100%;
+    height: 100px;
+    background-color: #2264ab;
+    // background-color: $third-color;
+    color: aliceblue;
+    // color: $secondary-color;
+    .footer_developer_name_container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      width: 400px;
+    }
+    .footer_contact {
+      height: 100%;
+      width: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+    }
   }
 }
