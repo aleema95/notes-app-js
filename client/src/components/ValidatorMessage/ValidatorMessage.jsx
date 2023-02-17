@@ -5,15 +5,6 @@ import s from './ValidatorMessage.module.scss'
 
 export default function ValidatorMessage({form_errors, visibility}) {
 
-  // const [visibility, setVisibility] = useState(true)
-  // const form_errors = useSelector((state) => state.errors.form_errors)
-
-  // useEffect(() => {
-  //   if ((Object.keys(form_errors).length === 0)) {
-  //     setVisibility(false)
-  //   } else setVisibility(true)
-  // }, [form_errors, visibility])
-
   return (
     <AnimatePresence>
       {
@@ -36,7 +27,6 @@ export default function ValidatorMessage({form_errors, visibility}) {
             </div>
             <div>
               <h4>Name:</h4>
-              {/* create invalid field class, with red text */}
               <p className={`${form_errors.name ? s.invalidField : s.validField}`}>*This field is required</p>
               <p className={`${form_errors.name_only_Letters ? s.invalidField : s.validField}`}>*Only letters</p>
             </div>
