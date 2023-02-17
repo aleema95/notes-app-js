@@ -3,16 +3,16 @@ import { useSelector } from 'react-redux'
 import { motion, AnimatePresence } from 'framer-motion'
 import s from './ValidatorMessage.module.scss'
 
-export default function ValidatorMessage() {
+export default function ValidatorMessage({form_errors, visibility}) {
 
-  const [visibility, setVisibility] = useState(true)
-  const form_errors = useSelector((state) => state.errors.form_errors)
+  // const [visibility, setVisibility] = useState(true)
+  // const form_errors = useSelector((state) => state.errors.form_errors)
 
-  useEffect(() => {
-    if ((Object.keys(form_errors).length === 0)) {
-      setVisibility(false)
-    } else setVisibility(true)
-  }, [form_errors, visibility])
+  // useEffect(() => {
+  //   if ((Object.keys(form_errors).length === 0)) {
+  //     setVisibility(false)
+  //   } else setVisibility(true)
+  // }, [form_errors, visibility])
 
   return (
     <AnimatePresence>
@@ -26,9 +26,9 @@ export default function ValidatorMessage() {
             exit={{
               x:-400,
               rotate: 180,
-              transition: { duration: 1 }
+              transition: { duration: 0.8 }
             }}
-            transition={{duration: 1, delay: 0.3}}
+            transition={{duration: 0.8, delay: 0.3}}
             >
             <div>
               <h4>Username:</h4>

@@ -25,7 +25,9 @@ export function validation(input) {
 
   if(!input.password) {
     errors.password = true;
-  } else if(input.password !== input.confirm_password && input.confirm_password !== false) {
+  }
+  
+  if(input.password !== input.confirm_password || input.confirm_password == '') {
     errors.confirm_password = true
   }
 

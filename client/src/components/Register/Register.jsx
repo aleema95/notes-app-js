@@ -5,12 +5,13 @@ import { validation } from '../../utils/registerUtils'
 import { setErrors } from '../../redux/slices/errorsSlice'
 import MultipleWaves from '../../assets/svg/MultipleWaves'
 import ValidatorMessage from '../ValidatorMessage/ValidatorMessage'
+import useRegisterForm from '../../hooks/useRegisterForm'
 import s from './Register.module.scss'
-import { useRef } from 'react'
 
 export default function Register() {
   const dispatch = useDispatch()
-  
+  const { formHasErrors, form_errors } = useRegisterForm()
+
   const [userInput, setUserInput] = useState({
     username:'',
     name:'',
@@ -24,6 +25,12 @@ export default function Register() {
     setUserInput({...userInput, [e.target.name]: e.target.value});
   }
 
+  function onSubmit(e) {
+    e.preventDefault()
+    if(!formHasErrors) alert('Needs submit handling')
+    else alert('Field needs checking')
+  }
+
   useEffect(() => {
     dispatch(setErrors(validation(userInput)))
   }, [userInput])
@@ -32,8 +39,8 @@ export default function Register() {
     <div className={s.main_container}>
       <Link to={'/'}><h1 className={s.back_btn}>Back</h1></Link>
       <h1 className={s.register_title}>Register</h1>
-      <ValidatorMessage />
-      <form className={s.registration_form_container}>
+      <ValidatorMessage visibility={formHasErrors} form_errors={form_errors} />
+      <form onSubmit={onSubmit} className={s.registration_form_container}>
         <div className={s.form_header}>
           <label className={s.header_label} htmlFor="">Username </label>
           <input className={s.header_input} onChange={onChange} type="text" name="username"  />
