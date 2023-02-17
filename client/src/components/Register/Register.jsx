@@ -6,6 +6,7 @@ import { setErrors } from '../../redux/slices/errorsSlice'
 import MultipleWaves from '../../assets/svg/MultipleWaves'
 import ValidatorMessage from '../ValidatorMessage/ValidatorMessage'
 import s from './Register.module.scss'
+import { useRef } from 'react'
 
 export default function Register() {
   const dispatch = useDispatch()
