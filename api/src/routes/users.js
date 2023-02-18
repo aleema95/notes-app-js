@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const { User, Favourite } = require('../db.js');
+const { User, Favourite, Note } = require('../db.js');
 const bcrypt = require('bcrypt');
 
 const router = Router();
@@ -8,12 +8,22 @@ const salt_rounds = 10;
 
 router.get('/', async (req, res) => {
   try {
-    const users = await User.findAll({ include: Favourite});
+    const users = await User.findAll({ include: [Favourite, Note]});
     res.json({message: 'Success', users});
   } catch (error) {
     res.json(error.message)
   }
   
+});
+
+router.get('/id/:id', async (req, res) => {
+  const { id } = req.params;
+  try {
+    const user = await User.findByPk(id, { include: [Favourite, Note]});
+    res.json({message: 'Success', user});
+  } catch (error) {
+    res.json(error.message)
+  }
 });
 
 router.post('/create', async (req, res) => {
