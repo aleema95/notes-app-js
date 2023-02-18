@@ -11,7 +11,7 @@ function createTestingUsers(amount_of_users) {
     })
   }
 
-  if (amount_of_users = 1) return users[0]
+  if (amount_of_users === 1) return users[0]
 
   return users
 }
