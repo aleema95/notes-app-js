@@ -9,6 +9,9 @@ import {
 } from "react-router-dom";
 import './index.scss'
 import Register from './components/Register/Register';
+import axios from 'axios';
+
+axios.defaults.baseURL = 'http://localhost:3010';
 
 
 const router = createBrowserRouter([
