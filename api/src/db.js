@@ -59,8 +59,11 @@ Favourite.belongsTo(User)
 Note.hasMany(Favourite)
 Favourite.belongsTo(Note)
 
-// Videogame.belongsToMany(Genre, {through: 'VideogameGenre'});
-// Genre.belongsToMany(Videogame, {through: 'VideogameGenre'});
+User.hasMany(Note)
+Note.belongsTo(User)
+
+User.hasMany(Comment)
+Comment.belongsTo(User)
 
 module.exports = {
   ...sequelize.models, 

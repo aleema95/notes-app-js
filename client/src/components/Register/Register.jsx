@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { validation } from '../../utils/registerUtils'
 import { setErrors } from '../../redux/slices/errorsSlice'
+import { registerUser } from '../../redux/actions/userActions'
 import MultipleWaves from '../../assets/svg/MultipleWaves'
 import ValidatorMessage from '../ValidatorMessage/ValidatorMessage'
 import useRegisterForm from '../../hooks/useRegisterForm'
@@ -27,7 +28,7 @@ export default function Register() {
 
   function onSubmit(e) {
     e.preventDefault()
-    if(!formHasErrors) alert('Needs submit handling')
+    if(!formHasErrors) registerUser(userInput)
     else alert('Field needs checking')
   }
 
