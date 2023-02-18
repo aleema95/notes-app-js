@@ -6,12 +6,9 @@
   height: 150px;
 }
 
-.validField {
-  color: rgb(113, 211, 113);
-}
-
 label {
   font-size: 1.5rem;
+  font-weight: $weight-600;
   color: $third-color;
   vertical-align: bottom;
 }
