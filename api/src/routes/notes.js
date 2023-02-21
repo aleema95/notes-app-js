@@ -6,8 +6,8 @@ const router = Router();
 
 router.get('/', async (req, res) => {
   try {
-    const note = await Note.findAll();
-    res.status(200).json({message: 'Success', note});
+    const notes = await Note.findAll();
+    res.status(200).json({message: 'Success', notes});
   } catch (error) {
     res.send(404).json(error.message)
   }
