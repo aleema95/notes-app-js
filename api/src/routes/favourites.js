@@ -11,7 +11,6 @@ router.get('/', async (req, res) => {
   } catch (error) {
     res.send(404).json(error.message)
   }
-  
 });
 
 router.post('/create', async (req, res) => {

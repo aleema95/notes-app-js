@@ -9,10 +9,22 @@
     display: flex;
     justify-content: space-evenly;
   }
+  .notes_section {
+    flex-direction: column;
+
+    .user_notes_container {
+      display: flex;
+      gap: 15px;
+      width: 600px;
+      height: 400px;
+      background-color: $secondary-color;
+    }
+  }
   .test {
     position: absolute;
     left: 0;
     bottom: 0;
     width: 100%;
+    z-index: -1;
   }
 }

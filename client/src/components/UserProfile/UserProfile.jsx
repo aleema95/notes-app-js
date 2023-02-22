@@ -23,12 +23,15 @@ export default function UserProfile() {
           <button>Create Note</button>
         </div>
         <div className={s.notes_section}>
-          {
-            notes?.map( n => {
-              return <h1>{n.title}</h1>
-            })
-          }
           <h1>My Notes</h1>
+          <div className={s.user_notes_container}>
+            {
+              notes?.map( n => {
+                return <h3>{n.title}</h3>
+              })
+            }
+          </div>
+          
         </div>
         <div className={s.favourites_section}>
           <h1>Favourites</h1>
