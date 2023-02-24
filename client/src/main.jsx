@@ -11,6 +11,7 @@ import './index.scss'
 import Register from './components/Register/Register';
 import axios from 'axios';
 import UserProfile from './components/UserProfile/UserProfile'
+import NoteCard from './components/NoteCard/NoteCard'
 
 axios.defaults.baseURL = 'http://localhost:3010';
 
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
   {
     path: "/profile",
     element: <UserProfile />
+  },
+  {
+    path: "/test",
+    element: <NoteCard />
   },
 ]);
 

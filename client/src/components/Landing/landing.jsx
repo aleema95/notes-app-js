@@ -23,10 +23,12 @@ const Landing = () => {
             <p>4.8</p>
           </div>
           <div className={s.noteText}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-            Ut enim ad minim veniam, quis nostrud exercitation
-            ullamco laboris nisi ut aliquip ex ea commodo consequat...
+            <p className={s.noteParagraph}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+              Ut enim ad minim veniam, quis nostrud exercitation
+              ullamco laboris nisi ut aliquip ex ea commodo consequat...
+            </p>
           </div>
           <div className={s.noteAuthor}>
           <p>- Seneca </p>

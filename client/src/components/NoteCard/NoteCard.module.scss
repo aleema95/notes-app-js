@@ -1,0 +1,29 @@
+@import '../../variables.scss';
+
+.card_container {
+  width: 300px;
+  height: 200px;
+  background-color: $secondary-color ;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  .note_header {
+    margin: 0 25px;
+    padding: 5px 0;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid $fourth-color;
+  }
+  .note_body {
+    margin: 10px auto;
+    width: 250px;
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .note_author {
+    text-align: right;
+    margin: auto 15px 10px 0;
+  }
+}
