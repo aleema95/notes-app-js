@@ -14,10 +14,9 @@
 
     .user_notes_container {
       display: flex;
-      gap: 15px;
-      width: 600px;
-      height: 400px;
-      background-color: $secondary-color;
+      width: 100%;
+      gap: 10px;
+      overflow: scroll;
     }
   }
   .test {

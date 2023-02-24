@@ -28,7 +28,7 @@ export default function UserProfile() {
           <div className={s.user_notes_container}>
             {
               notes?.map( n => {
-                return <NoteCard />
+                return <NoteCard {...n} />
               })
             }
           </div>
