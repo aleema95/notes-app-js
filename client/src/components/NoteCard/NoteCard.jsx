@@ -1,7 +1,7 @@
 import React from 'react'
 import s from './NoteCard.module.scss'
 
-export default function NoteCard() {
+export default function NoteCard({id, title, body, rating, UserId }) {
   return (
     <>
       <div className={s.card_container}>
