@@ -5,6 +5,7 @@ import s from './UserProfile.module.scss'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { get_notes } from '../../redux/actions/notesActions'
+import NoteCard from '../NoteCard/NoteCard'
 
 export default function UserProfile() {
   const dispatch = useDispatch()
@@ -27,7 +28,7 @@ export default function UserProfile() {
           <div className={s.user_notes_container}>
             {
               notes?.map( n => {
-                return <h3>{n.title}</h3>
+                return <NoteCard />
               })
             }
           </div>
