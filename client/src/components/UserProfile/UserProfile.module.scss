@@ -12,14 +12,16 @@
   .notes_section {
     flex-direction: column;
 
-    .user_notes_container {
-      display: flex;
+    .user_notes_carousel {
       width: 100%;
-      gap: 10px;
-      overflow: scroll;
+      overflow: hidden;
+      cursor: grab;
+      .inner_carousel {
+        display: flex;
+      }
     }
   }
-  .test {
+  .background_waves {
     position: absolute;
     left: 0;
     bottom: 0;
