@@ -9,17 +9,8 @@
     display: flex;
     justify-content: space-evenly;
   }
-  .notes_section {
+  .notes_section, .favourites_section {
     flex-direction: column;
-
-    .user_notes_carousel {
-      width: 100%;
-      overflow: hidden;
-      cursor: grab;
-      .inner_carousel {
-        display: flex;
-      }
-    }
   }
   .background_waves {
     position: absolute;
