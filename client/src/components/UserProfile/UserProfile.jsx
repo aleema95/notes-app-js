@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { get_notes } from '../../redux/actions/notesActions'
 import Nav from '../Nav/nav'
@@ -17,10 +17,10 @@ export default function UserProfile() {
   return (
     <>
       <div className={s.main_container}>
-      <Nav />
+        <Nav />
         <div className={s.hero_section}>
           <h1>Profile</h1>
-          <button>Create Note</button>
+          <button className={s.create_note_btn}>Create Note</button>
         </div>
         <div className={s.notes_section}>
           <h1>My Notes</h1>

@@ -10,7 +10,7 @@ export default function CardCarousel({ notes }) {
   useEffect(() => {
     setTimeout(() => {
       setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth)
-    }, 50)
+    }, 100)
   }, [])
 
   return (
