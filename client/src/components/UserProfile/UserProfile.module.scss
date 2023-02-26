@@ -14,6 +14,10 @@
     flex-direction: column;
   }
   .hero_section {
+    .create_note_btn {
+      width: 200px;
+      font-size: 1.5rem;
+    }
     h1 {
       font-size: 3rem;
     }
