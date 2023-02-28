@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import s from './NoteCard.module.scss'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import FavouriteIcon from '../../assets/svg/FavouriteIcon'
+import FavouriteIconChecked from '../../assets/svg/FavouriteIconChecked'
 
 export default function NoteCard({id, title, body, rating, UserId }) {
+  const [favourite, setfavourite] = useState(false)
   return (
       <motion.div className={s.card_container}>
         <Link to={'/'} className={s.title_link}>
@@ -17,7 +19,7 @@ export default function NoteCard({id, title, body, rating, UserId }) {
           {body}
         </p>
         <div className={s.bottom_container}>
-          <FavouriteIcon />
+          {favourite ? <FavouriteIconChecked /> : <FavouriteIcon />}
           <h4 className={s.note_author}>
             - Seneca
           </h4>
