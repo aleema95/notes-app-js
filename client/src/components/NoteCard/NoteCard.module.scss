@@ -8,15 +8,19 @@
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  // box-shadow: -15px 20px 31px 4px rgba(0,0,0,0.1);
-  .note_header {
-    margin: 0 25px;
-    padding: 5px 0;
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid $fourth-color;
     .title_link {
       text-decoration: none;
+      .note_header {
+        margin: 0 25px;
+        padding: 5px 0;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid $third-color;
+        text-decoration: none;
+        color: $third-color;
+      &:visited, &:hover, &:active {
+        color: $third-color;
+      }
     }
   }
   .note_body {
