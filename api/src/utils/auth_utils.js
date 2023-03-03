@@ -22,7 +22,7 @@ const authenticate_user = async (req, res, next) => {
     bcrypt.compare(password, user.password, function(err, result) {
       // result == true
       if(err) return console.error(err);
-      if(!result) return res.status(401).send('Authentication error, please check your credentials.')
+      if(!result) return res.status(401).json({status: 401, message: 'Authentication error, please check your credentials.'})
       return next()
     }); 
   } catch (error) {

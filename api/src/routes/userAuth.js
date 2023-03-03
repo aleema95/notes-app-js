@@ -19,18 +19,4 @@ router.post('/login', authenticate_user,async (req, res) => {
   }
 });
 
-router.get('/testAuth', authenticate_token,async (req, res) => {
-  const { username } = req.body
-  console.log(req.id);
-  try {
-    const user = await User.findOne({where: {
-      username
-    }, include: [Favourite, Note]});
-
-    res.json({message: 'Success', user});
-  } catch (error) {
-    res.json(error.message)
-  }
-});
-
 module.exports = router;
