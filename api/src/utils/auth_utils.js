@@ -5,7 +5,7 @@ const bcrypt = require('bcrypt');
 
 const { ACCESS_TOKEN_SECRET } = process.env
 
-const fifteenMinutes = 60 * 15
+const fifteen_minutes = 60 * 15
 
 const authenticate_user = async (req, res, next) => {
   const { username, password } = req.body;
@@ -30,8 +30,8 @@ const authenticate_user = async (req, res, next) => {
   }
 }
 
-function generate_access_token(_id) {
-  return jwt.sign({_id}, ACCESS_TOKEN_SECRET, { expiresIn: fifteenMinutes})
+function generate_access_token(id) {
+  return jwt.sign({id}, ACCESS_TOKEN_SECRET, { expiresIn: fifteen_minutes})
 }
 
 function authenticate_token(req, res, next) {
@@ -42,7 +42,7 @@ function authenticate_token(req, res, next) {
   return jwt.verify(token, ACCESS_TOKEN_SECRET, (err, user) => {
     if(err) return res.sendStatus(403)
     
-    req._id = user._id
+    req.id = user.id
     return next()
   })
 }
