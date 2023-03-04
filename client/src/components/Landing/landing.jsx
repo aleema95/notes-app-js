@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import s from './landing.module.scss'
 import Nav from "../Nav/nav";
 import LandingSVG from '../../assets/svg/landingSVG'
+import LoginModal from '../LoginModal/LoginModal'
 
 const Landing = () => {
+ 
 
   return <div className={s.container}>
     <Nav />
-
+   
     <div className={s.homeContainer}>
       {/* NOTEIT + some random notes */}
       <div className={s.topSection}>
