@@ -7,8 +7,6 @@ import s from './LoginModal.module.scss'
 export default function LoginModal({onModalClick}) {
   const dispatch = useDispatch();
   const [userInput, setUserInput] = useState({username: '', password:''})
-  const user = useSelector(state => state.user.user)
-  const access_token = useSelector(state => state.user.access_token)
 
   function onChange(e){
     setUserInput({...userInput, [e.target.name]: e.target.value})
