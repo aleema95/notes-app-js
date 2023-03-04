@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
+import { login } from '../../redux/actions/loginActions'
 import s from './LoginModal.module.scss'
 
 export default function LoginModal({onModalClick}) {
@@ -9,10 +10,12 @@ export default function LoginModal({onModalClick}) {
     setUserInput({...userInput, [e.target.name]: e.target.value})
   }
 
-  useEffect(() => {
-    console.log(userInput);
-  },[userInput])
-  
+  function onSubmit(e) {
+    e.preventDefault()
+    if (!userInput.username || !userInput.password) return
+    login(userInput)
+  }
+
   return (
     <div className={s.modal}>
       <motion.div
@@ -21,7 +24,7 @@ export default function LoginModal({onModalClick}) {
         transition={{duration: 0.3}}
         className={s.main_container}>
           <h1>Login</h1>
-        <form>
+        <form onSubmit={onSubmit}>
           <div className={s.label_input_container}>
             <label htmlFor="">Username</label>
             <input onChange={onChange} name='username' type="text" />
