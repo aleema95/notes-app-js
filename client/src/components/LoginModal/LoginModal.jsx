@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { motion } from 'framer-motion'
 import { login } from '../../redux/actions/loginActions'
 import s from './LoginModal.module.scss'
 
 export default function LoginModal({onModalClick}) {
+  const dispatch = useDispatch();
   const [userInput, setUserInput] = useState({username: '', password:''})
+  const user = useSelector(state => state.user.user)
+  const access_token = useSelector(state => state.user.access_token)
 
   function onChange(e){
     setUserInput({...userInput, [e.target.name]: e.target.value})
@@ -13,7 +17,7 @@ export default function LoginModal({onModalClick}) {
   function onSubmit(e) {
     e.preventDefault()
     if (!userInput.username || !userInput.password) return
-    login(userInput)
+    dispatch(login(userInput))
   }
 
   return (
