@@ -12,7 +12,7 @@
     margin: auto;
     background-color: $secondary-color;
     width: 500px;
-    height: 325px;
+    height: 350px;
     border: 1px solid black;
     border-radius: 10px;
     h1 {
@@ -26,11 +26,18 @@
       align-items: center;
       margin-bottom: 20px;
     }
-    .submit_btn {
-      display: block;
-      margin: 0 auto;
-      width: 125px;
-      height: 50px;
+    .btn_container{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 80px;
+      .submit_btn, .cancel_btn {
+        width: 125px;
+        height: 50px;
+      }
+      .cancel_btn {
+        background-color: rgb(216, 63, 63);
+      }
     }
   }
 }
