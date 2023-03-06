@@ -2,6 +2,7 @@ import React from 'react'
 import s from './CardCreation.module.scss'
 import { Link } from 'react-router-dom'
 import MultipleWaves from '../../assets/svg/MultipleWaves'
+import CardCreationForm from './CardCreationForm/CardCreationForm'
 
 export default function CardCreation() {
   return (
@@ -14,7 +15,7 @@ export default function CardCreation() {
           <h2>Profile</h2>
         </Link>
       </div>
-      <h1>Card Creation</h1>
+      <CardCreationForm />
       <div className={s.waves_container}>
         <MultipleWaves />
       </div>
